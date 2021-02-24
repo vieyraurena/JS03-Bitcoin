@@ -50,9 +50,9 @@ const priceElement = document.querySelector("h2");
 const timeElement = document.querySelector("p");
 const button = document.querySelector("button");
 // console.log(dropdown.value)
+const dropdown = document.querySelector("select");
 
 const selectionCoin = (data) => {
-  const dropdown = document.querySelector("select");
   const value = dropdown.value;
   if(value === 'USD') {
     const USD_INFO = data.bpi.USD;
@@ -95,4 +95,6 @@ const actualizarDatos = () => {
 
 actualizarDatos();
 
+dropdown.addEventListener('change', actualizarDatos);
 button.addEventListener("click", actualizarDatos);
+
